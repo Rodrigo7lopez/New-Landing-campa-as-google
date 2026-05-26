@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pack Intro Revive Gym – 3 clases por $499. Sin contratos, sin riesgos. Empieza tu transformación hoy.">
+    <title>Revive Gym — Pack Intro 3 Clases por $499</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* === VARIABLES === */
+        :root {
+            --primary:       #00C896;
+            --primary-dark:  #009E78;
+            --primary-light: #E6FFF6;
+            --primary-glow:  rgba(0, 200, 150, 0.22);
+            --text-dark:     #0C1A0E;
+            --text-mid:      #3D5242;
+            --text-soft:     #6B8970;
+            --bg-light:      #F4FDF8;
+            --white:         #FFFFFF;
+            --red:           #FF4D4F;
+            --border:        #C8ECD8;
+            --shadow:        0 4px 24px rgba(0, 80, 50, 0.10);
+            --shadow-lg:     0 12px 48px rgba(0, 80, 50, 0.16);
+        }
+
+        /* === RESET === */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-dark);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        a { text-decoration: none; }
+        img { max-width: 100%; display: block; }
+
+        /* === ANNOUNCEMENT BAR === */
+        .bar {
+            background: var(--primary-dark);
+            color: #fff;
+            text-align: center;
+            padding: 10px 20px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+        }
+        .bar em { color: #FFEC6E; font-style: normal; }
+
+        /* === NAV === */
+        nav {
+            background: var(--white);
+            padding: 14px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: var(--text-dark);
+            letter-spacing: -0.5px;
+        }
+        .logo span { color: var(--primary); }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary);
+            color: #fff;
+            padding: 11px 26px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            white-space: nowrap;
+        }
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px var(--primary-glow);
+        }
+        .btn:active { transform: translateY(0); }
+        .btn-lg {
+            padding: 18px 52px;
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: -0.3px;
+            box-shadow: 0 6px 32px var(--primary-glow);
+        }
+        .btn-lg:hover { box-shadow: 0 14px 44px rgba(0, 140, 90, 0.36); }
+        .btn-white {
+            background: #fff;
+            color: var(--primary-dark);
+        }
+        .btn-white:hover { background: var(--bg-light); }
+        .arrow { font-size: 1.1em; transition: transform 0.2s; }
+        .btn:hover .arrow { transform: translateX(4px); }
+
+        /* === HERO === */
+        .hero {
+            background: linear-gradient(145deg, var(--bg-light) 0%, var(--white) 55%);
+            padding: 72px 24px 88px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -120px; right: -120px;
+            width: 480px; height: 480px;
+            background: radial-gradient(circle, var(--primary-glow), transparent 70%);
+            pointer-events: none;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px; left: -80px;
+            width: 360px; height: 360px;
+            background: radial-gradient(circle, rgba(0,200,150,0.09), transparent 70%);
+            pointer-events: none;
+        }
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--primary-light);
+            border: 1.5px solid var(--primary);
+            color: var(--primary-dark);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            animation: ring 2.4s ease-in-out infinite;
+        }
+        @keyframes ring {
+            0%, 100% { box-shadow: 0 0 0 0 var(--primary-glow); }
+            50%       { box-shadow: 0 0 0 10px transparent; }
+        }
+        .hero h1 {
+            font-size: clamp(34px, 5.5vw, 66px);
+            font-weight: 900;
+            line-height: 1.08;
+            letter-spacing: -2px;
+            max-width: 740px;
+            margin: 0 auto 22px;
+        }
+        .hero h1 .hl { color: var(--primary-dark); }
+        .hero p.sub {
+            font-size: clamp(16px, 2.2vw, 20px);
+            color: var(--text-mid);
+            max-width: 520px;
+            margin: 0 auto 40px;
+        }
+
+        /* Price box */
+        .price-box {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--white);
+            border: 2.5px solid var(--primary);
+            border-radius: 22px;
+            padding: 24px 44px;
+            margin-bottom: 36px;
+            box-shadow: var(--shadow);
+        }
+        .price-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-mid); }
+        .price-old { font-size: 19px; color: #A0B0A8; text-decoration: line-through; margin: 4px 0 2px; }
+        .price-now {
+            font-size: clamp(52px, 9vw, 80px);
+            font-weight: 900;
+            color: var(--primary-dark);
+            line-height: 1;
+            letter-spacing: -3px;
+        }
+        .price-note { font-size: 14px; color: var(--text-mid); margin-top: 6px; }
+        .price-save {
+            margin-top: 10px;
+            background: var(--red);
+            color: #fff;
+            font-size: 12px;
+            font-weight: 800;
+            padding: 4px 14px;
+            border-radius: 50px;
+            letter-spacing: 0.3px;
+        }
+
+        /* Trust row */
+        .trust-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+            margin-top: 26px;
+        }
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            color: var(--text-mid);
+            font-weight: 500;
+        }
+        .trust-item .ck { color: var(--primary); font-weight: 900; font-size: 15px; }
+
+        /* Countdown */
+        .countdown-wrap { margin: 36px auto 0; max-width: 400px; }
+        .cd-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-mid); margin-bottom: 14px; }
+        .countdown {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+        .cd-unit {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--text-dark);
+            color: #fff;
+            border-radius: 14px;
+            padding: 13px 20px;
+            min-width: 74px;
+        }
+        .cd-unit .num {
+            font-size: 30px;
+            font-weight: 900;
+            line-height: 1;
+            font-variant-numeric: tabular-nums;
+        }
+        .cd-unit .unit {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--primary);
+            margin-top: 5px;
+        }
+
+        /* === STATS BAR === */
+        .stats-bar { background: var(--primary-dark); padding: 36px 24px; }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            max-width: 920px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .stat-num  { font-size: 38px; font-weight: 900; color: #fff; letter-spacing: -1.5px; line-height: 1; }
+        .stat-lbl  { font-size: 13px; color: rgba(255,255,255,0.65); font-weight: 500; margin-top: 5px; }
+
+        /* === SECTIONS LAYOUT === */
+        .section { padding: 84px 24px; }
+        .section.bg { background: var(--bg-light); }
+        .section.dark { background: var(--text-dark); }
+        .container { max-width: 1020px; margin: 0 auto; }
+        .sec-label  { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); margin-bottom: 10px; }
+        .sec-title  { font-size: clamp(26px, 3.8vw, 42px); font-weight: 800; letter-spacing: -1px; line-height: 1.15; margin-bottom: 14px; }
+        .sec-sub    { font-size: 18px; color: var(--text-mid); max-width: 560px; line-height: 1.65; }
+        .text-center { text-align: center; }
+        .text-center .sec-sub { margin-left: auto; margin-right: auto; }
+
+        /* === PACK CARD === */
+        .pack-card {
+            background: var(--white);
+            border-radius: 28px;
+            padding: 44px 44px 40px;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--border);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .pack-card-title { font-size: 22px; font-weight: 800; margin-bottom: 6px; }
+        .pack-card-sub   { font-size: 15px; color: var(--text-mid); margin-bottom: 30px; }
+        .pack-list { list-style: none; display: grid; gap: 16px; }
+        .pack-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 16px;
+            color: var(--text-mid);
+            font-weight: 500;
+        }
+        .pack-list li strong { color: var(--text-dark); }
+        .pi {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            background: var(--primary-light);
+            border-radius: 9px;
+            font-size: 17px;
+        }
+        .divider { height: 1.5px; background: var(--border); margin: 30px 0; }
+        .pack-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .pack-price-old { font-size: 17px; color: #A0B0A8; text-decoration: line-through; margin-bottom: 3px; }
+        .pack-price-now { font-size: 44px; font-weight: 900; color: var(--primary-dark); letter-spacing: -2px; line-height: 1; }
+
+        /* === BENEFITS GRID === */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 52px;
+        }
+        .benefit-card {
+            background: var(--white);
+            border: 1.5px solid var(--border);
+            border-radius: 22px;
+            padding: 30px 26px;
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+        }
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+        .benefit-icon { font-size: 38px; margin-bottom: 18px; }
+        .benefit-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
+        .benefit-desc  { font-size: 14px; color: #5C7A63; line-height: 1.65; }
+
+        /* === TESTIMONIALS === */
+        .t-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 50px;
+        }
+        .t-card {
+            background: rgba(255,255,255,0.05);
+            border: 1.5px solid rgba(255,255,255,0.10);
+            border-radius: 22px;
+            padding: 30px;
+            transition: background 0.3s, border-color 0.3s;
+        }
+        .t-card:hover { background: rgba(255,255,255,0.09); border-color: var(--primary); }
+        .stars { color: #FFD700; font-size: 18px; margin-bottom: 16px; letter-spacing: 2px; }
+        .t-text { font-size: 15px; color: rgba(255,255,255,0.82); line-height: 1.75; font-style: italic; margin-bottom: 24px; }
+        .t-author { display: flex; align-items: center; gap: 13px; }
+        .t-avatar {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: #fff;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+        .t-name   { font-size: 15px; font-weight: 700; color: #fff; }
+        .t-detail { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 2px; }
+
+        /* === HOW IT WORKS === */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            margin-top: 52px;
+            position: relative;
+        }
+        .steps::before {
+            content: '';
+            position: absolute;
+            top: 38px;
+            left: calc(16.67% + 16px);
+            right: calc(16.67% + 16px);
+            height: 2px;
+            background: var(--border);
+        }
+        .step { text-align: center; position: relative; }
+        .step-num {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: #fff;
+            font-size: 30px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 22px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 0 0 10px var(--primary-light);
+        }
+        .step-title { font-size: 18px; font-weight: 700; margin-bottom: 10px; }
+        .step-desc  { font-size: 14px; color: var(--text-mid); line-height: 1.65; }
+
+        /* === FAQ === */
+        .faq-list { max-width: 720px; margin: 52px auto 0; display: grid; gap: 12px; }
+        .faq-item { background: var(--white); border: 1.5px solid var(--border); border-radius: 18px; overflow: hidden; }
+        .faq-q {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 26px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            gap: 16px;
+            user-select: none;
+            transition: background 0.2s;
+        }
+        .faq-q:hover { background: var(--bg-light); }
+        .faq-icon { font-size: 22px; color: var(--primary); transition: transform 0.3s; flex-shrink: 0; }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.38s ease; }
+        .faq-a-inner { padding: 0 26px 22px; font-size: 15px; color: var(--text-mid); line-height: 1.75; }
+        .faq-item.open .faq-a { max-height: 320px; }
+
+        /* === FINAL CTA === */
+        .final-cta-section {
+            background: linear-gradient(140deg, var(--primary-dark) 0%, #007558 100%);
+            text-align: center;
+            padding: 88px 24px;
+        }
+        .final-cta-section .sec-title { color: #fff; max-width: 580px; margin: 0 auto 14px; }
+        .final-cta-section .sec-sub   { color: rgba(255,255,255,0.73); margin: 0 auto 40px; }
+        .final-trust {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            justify-content: center;
+            margin-top: 26px;
+        }
+        .final-trust span {
+            font-size: 13px;
+            color: rgba(255,255,255,0.72);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* === FOOTER === */
+        footer {
+            background: var(--text-dark);
+            padding: 36px 24px;
+            text-align: center;
+        }
+        .footer-logo { font-size: 22px; font-weight: 900; color: var(--primary); margin-bottom: 14px; }
+        .footer-links { display: flex; gap: 24px; justify-content: center; margin-bottom: 14px; }
+        .footer-links a { font-size: 13px; color: rgba(255,255,255,0.45); transition: color 0.2s; }
+        .footer-links a:hover { color: var(--primary); }
+        .footer-copy { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+        /* === STICKY MOBILE CTA === */
+        .sticky-bar {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background: #fff;
+            padding: 12px 20px;
+            box-shadow: 0 -6px 24px rgba(0,0,0,0.13);
+            display: none;
+            z-index: 200;
+        }
+        .sticky-bar .btn { width: 100%; justify-content: center; padding: 16px; font-size: 16px; }
+
+        /* === SCROLL ANIMATIONS === */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-up.in { opacity: 1; transform: translateY(0); }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 900px) {
+            .benefits-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .stats-grid       { grid-template-columns: repeat(2, 1fr); }
+            .benefits-grid    { grid-template-columns: 1fr; }
+            .t-grid           { grid-template-columns: 1fr; }
+            .steps            { grid-template-columns: 1fr; gap: 28px; }
+            .steps::before    { display: none; }
+            .sticky-bar       { display: block; }
+            .hero             { padding-bottom: 100px; }
+            .pack-card        { padding: 28px 22px; }
+            nav .btn          { display: none; }
+        }
+        @media (max-width: 480px) {
+            .price-box        { padding: 20px 28px; }
+            .cd-unit          { min-width: 62px; padding: 11px 14px; }
+            .pack-bottom      { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="bar">🔥 Oferta de lanzamiento: <em>solo quedan 10 lugares</em> esta semana</div>
+
+<!-- NAV -->
+<nav>
+    <div class="logo">RE<span>VIVE</span></div>
+    <a href="#pack" class="btn">Obtener Pack <span class="arrow">→</span></a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="badge">⚡ Oferta Especial de Introducción</div>
+    <h1>Tu primera experiencia en Revive.<br><span class="hl">3 clases. Sin excusas.</span></h1>
+    <p class="sub">Conoce todo lo que Revive tiene para ti: equipo premium, instructores certificados y la comunidad que necesitas para transformar tu cuerpo.</p>
+
+    <div class="price-box">
+        <div class="price-label">Pack Intro — Precio especial</div>
+        <div class="price-old">$799</div>
+        <div class="price-now">$499</div>
+        <div class="price-note">3 clases · Sin contrato · Acceso inmediato</div>
+        <div class="price-save">Ahorras $300 &nbsp;·&nbsp; 37% OFF</div>
+    </div>
+
+    <a href="#pack" class="btn btn-lg" id="hero-cta">
+        Obtener mi Pack Ahora <span class="arrow">→</span>
+    </a>
+
+    <div class="trust-row">
+        <div class="trust-item"><span class="ck">✓</span> Sin contratos</div>
+        <div class="trust-item"><span class="ck">✓</span> Sin riesgo</div>
+        <div class="trust-item"><span class="ck">✓</span> Acceso inmediato</div>
+        <div class="trust-item"><span class="ck">✓</span> Pago 100% seguro</div>
+    </div>
+
+    <div class="countdown-wrap">
+        <div class="cd-label">⏳ La oferta expira en</div>
+        <div class="countdown">
+            <div class="cd-unit"><span class="num" id="cd-h">23</span><span class="unit">Horas</span></div>
+            <div class="cd-unit"><span class="num" id="cd-m">59</span><span class="unit">Mins</span></div>
+            <div class="cd-unit"><span class="num" id="cd-s">59</span><span class="unit">Segs</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+    <div class="stats-grid">
+        <div class="fade-up"><div class="stat-num">500+</div><div class="stat-lbl">Miembros activos</div></div>
+        <div class="fade-up"><div class="stat-num">4.9★</div><div class="stat-lbl">Calificación promedio</div></div>
+        <div class="fade-up"><div class="stat-num">50+</div><div class="stat-lbl">Clases por semana</div></div>
+        <div class="fade-up"><div class="stat-num">5 años</div><div class="stat-lbl">De experiencia</div></div>
+    </div>
+</div>
+
+<!-- WHAT'S INCLUDED -->
+<section class="section bg" id="pack">
+    <div class="container">
+        <div class="text-center" style="margin-bottom:52px">
+            <div class="sec-label">¿Qué incluye?</div>
+            <h2 class="sec-title">Todo lo que necesitas para empezar</h2>
+            <p class="sec-sub">El pack intro Revive está diseñado para darte la mejor primera experiencia posible, sin sorpresas.</p>
+        </div>
+
+        <div class="pack-card fade-up">
+            <div class="pack-card-title">Pack Intro Revive — 3 Clases</div>
+            <div class="pack-card-sub">Todo incluido, sin letras pequeñas</div>
+
+            <ul class="pack-list">
+                <li>
+                    <span class="pi">🏋️</span>
+                    <span><strong>3 clases de tu elección</strong> — Funcional, yoga, HIIT, pilates, ciclismo indoor y más. Puedes combinarlas como quieras.</span>
+                </li>
+                <li>
+                    <span class="pi">📋</span>
+                    <span><strong>Evaluación física inicial</strong> — Un instructor certificado evaluará tu condición y objetivos para guiarte desde el primer día.</span>
+                </li>
+                <li>
+                    <span class="pi">🏠</span>
+                    <span><strong>Acceso completo a las instalaciones</strong> — Usa todo el equipamiento y áreas del gym durante tus sesiones.</span>
+                </li>
+                <li>
+                    <span class="pi">📅</span>
+                    <span><strong>Agenda completamente flexible</strong> — Reserva en el horario que más te convenga desde nuestra app o en recepción.</span>
+                </li>
+                <li>
+                    <span class="pi">👋</span>
+                    <span><strong>Plan de bienvenida personalizado</strong> — Recibirás recomendaciones específicas para alcanzar tus metas más rápido.</span>
+                </li>
+                <li>
+                    <span class="pi">⏰</span>
+                    <span><strong>30 días para usarlas</strong> — Tienes un mes completo desde tu compra para completar las 3 sesiones.</span>
+                </li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <div class="pack-bottom">
+                <div>
+                    <div class="pack-price-old">Precio regular: $799</div>
+                    <div class="pack-price-now">$499 <small style="font-size:16px;color:#8aaa94;font-weight:600">MXN</small></div>
+                </div>
+                <!-- ⬇️ REEMPLAZA el href con tu link de pago (Stripe, Clip, Conekta, etc.) -->
+                <a href="TU_LINK_DE_PAGO_AQUI" class="btn btn-lg" target="_blank" rel="noopener">
+                    Comprar Ahora <span class="arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="section">
+    <div class="container">
+        <div class="sec-label">Por qué Revive</div>
+        <h2 class="sec-title">Un gym diferente. En serio.</h2>
+        <p class="sec-sub">No somos solo un gimnasio. Somos una comunidad comprometida con tu transformación desde el día uno.</p>
+
+        <div class="benefits-grid">
+            <div class="benefit-card fade-up">
+                <div class="benefit-icon">🏆</div>
+                <div class="benefit-title">Equipo premium</div>
+                <div class="benefit-desc">Máquinas y equipos de última generación, bien mantenidos y siempre disponibles para que tu entrenamiento sea de alta eficiencia.</div>
+            </div>
+            <div class="benefit-card fade-up">
+                <div class="benefit-icon">👨‍🏫</div>
+                <div class="benefit-title">Instructores certificados</div>
+                <div class="benefit-desc">Nuestro equipo cuenta con certificaciones internacionales. Tu progreso, seguridad y motivación son su prioridad número uno.</div>
+            </div>
+            <div class="benefit-card fade-up">
+                <div class="benefit-icon">🤝</div>
+                <div class="benefit-title">Comunidad real</div>
+                <div class="benefit-desc">Más de 500 personas que comparten tu mentalidad. El ambiente en Revive te motivará desde la primera clase.</div>
+            </div>
+            <div class="benefit-card fade-up">
+                <div class="benefit-icon">📊</div>
+                <div class="benefit-title">Resultados medibles</div>
+                <div class="benefit-desc">Seguimiento de progreso desde tu primera sesión. Metodología probada para que veas resultados reales, no solo esfuerzo.</div>
+            </div>
+            <div class="benefit-card fade-up">
+                <div class="benefit-icon">🗓️</div>
+                <div class="benefit-title">Horarios flexibles</div>
+                <div class="benefit-desc">Abierto desde temprano hasta tarde. Más de 50 clases por semana para que nunca tengas excusa de no entrenar.</div>
+            </div>
+            <div class="benefit-card fade-up">
+                <div class="benefit-icon">🚫</div>
+                <div class="benefit-title">Sin contratos</div>
+                <div class="benefit-desc">Empieza sin compromisos. Si te quedas es porque quieres. Aunque spoiler: la mayoría se queda.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section dark">
+    <div class="container">
+        <div class="sec-label">Testimonios</div>
+        <h2 class="sec-title" style="color:#fff">Lo que dicen nuestros miembros</h2>
+
+        <div class="t-grid">
+            <div class="t-card fade-up">
+                <div class="stars">★★★★★</div>
+                <p class="t-text">"Llevaba meses posponiendo empezar. El pack intro fue la excusa perfecta para dar el primer paso. ¡Ya llevo 6 meses en Revive y no lo cambiaría por nada!"</p>
+                <div class="t-author">
+                    <div class="t-avatar">AR</div>
+                    <div>
+                        <div class="t-name">Ana R.</div>
+                        <div class="t-detail">Miembro desde hace 6 meses</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="t-card fade-up">
+                <div class="stars">★★★★★</div>
+                <p class="t-text">"Las instalaciones son increíbles y los instructores realmente se preocupan por ti. Desde mi primera clase me sentí parte de la comunidad. 100% recomendado."</p>
+                <div class="t-author">
+                    <div class="t-avatar">CM</div>
+                    <div>
+                        <div class="t-name">Carlos M.</div>
+                        <div class="t-detail">Miembro desde hace 1 año</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="t-card fade-up">
+                <div class="stars">★★★★★</div>
+                <p class="t-text">"En las primeras 3 clases aprendí más que en años de ir al gym solo. El pack intro valió cada peso. Revive cambió completamente mi forma de entrenar."</p>
+                <div class="t-author">
+                    <div class="t-avatar">SL</div>
+                    <div>
+                        <div class="t-name">Sofía L.</div>
+                        <div class="t-detail">Miembro desde hace 8 meses</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section bg">
+    <div class="container">
+        <div class="text-center" style="margin-bottom:52px">
+            <div class="sec-label">¿Cómo funciona?</div>
+            <h2 class="sec-title">3 pasos para empezar</h2>
+        </div>
+
+        <div class="steps">
+            <div class="step fade-up">
+                <div class="step-num">1</div>
+                <div class="step-title">Compra tu pack</div>
+                <div class="step-desc">Pago 100% seguro en línea. Recibirás confirmación inmediata por correo con acceso a tu pack.</div>
+            </div>
+            <div class="step fade-up">
+                <div class="step-num">2</div>
+                <div class="step-title">Agenda tu clase</div>
+                <div class="step-desc">Elige la disciplina y el horario que mejor te convenga. Por app o directamente en recepción.</div>
+            </div>
+            <div class="step fade-up">
+                <div class="step-num">3</div>
+                <div class="step-title">¡Empieza tu cambio!</div>
+                <div class="step-desc">Llega, entrena y siente la diferencia desde la primera sesión. Bienvenido/a a la familia Revive.</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+    <div class="container text-center">
+        <div class="sec-label">Preguntas frecuentes</div>
+        <h2 class="sec-title">Todo lo que necesitas saber</h2>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-q">¿Cuánto tiempo tengo para usar las 3 clases?<span class="faq-icon">+</span></div>
+                <div class="faq-a"><div class="faq-a-inner">Tienes <strong>30 días naturales</strong> desde la fecha de compra para completar tus 3 sesiones. Si por alguna razón necesitas más tiempo, contáctanos y lo resolvemos sin problema.</div></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">¿Puedo elegir cualquier tipo de clase?<span class="faq-icon">+</span></div>
+                <div class="faq-a"><div class="faq-a-inner">Sí, puedes elegir entre <strong>todas las disciplinas disponibles</strong>: funcional, yoga, HIIT, pilates, ciclismo indoor y más. También puedes combinar diferentes clases en tus 3 sesiones.</div></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">¿Qué pasa después de completar las 3 clases?<span class="faq-icon">+</span></div>
+                <div class="faq-a"><div class="faq-a-inner"><strong>Absolutamente nada obligatorio.</strong> Al terminar tu pack intro te presentaremos las opciones de membresía. Tú decides si quieres continuar, sin presiones. El 80% de quienes hacen el pack intro se queda. 😉</div></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">¿Es seguro el pago en línea?<span class="faq-icon">+</span></div>
+                <div class="faq-a"><div class="faq-a-inner">Completamente. Procesamos pagos a través de plataformas certificadas con <strong>encriptación SSL de 256 bits</strong>. Tu información bancaria nunca es almacenada en nuestros servidores.</div></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">¿Necesito experiencia previa en el gimnasio?<span class="faq-icon">+</span></div>
+                <div class="faq-a"><div class="faq-a-inner">Para nada. El pack intro está diseñado para <strong>todos los niveles</strong>, desde principiantes absolutos hasta deportistas con experiencia. La evaluación inicial adapta la experiencia a ti.</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta-section">
+    <div class="sec-label" style="color:rgba(255,255,255,0.6)">Última llamada</div>
+    <h2 class="sec-title">¿Listo para empezar tu transformación?</h2>
+    <p class="sec-sub">No lo pienses más. Tu versión más fit te está esperando en Revive.</p>
+    <!-- ⬇️ REEMPLAZA el href con tu link de pago -->
+    <a href="TU_LINK_DE_PAGO_AQUI" class="btn btn-lg btn-white" target="_blank" rel="noopener">
+        Obtener mi Pack Intro — $499 <span class="arrow">→</span>
+    </a>
+    <div class="final-trust">
+        <span>🔒 Pago seguro</span>
+        <span>✅ Sin contrato</span>
+        <span>📅 30 días para usarlas</span>
+        <span>⭐ 4.9/5 estrellas</span>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-logo">REVIVE</div>
+    <div class="footer-links">
+        <a href="#">Aviso de Privacidad</a>
+        <a href="#">Términos y Condiciones</a>
+        <a href="#">Contacto</a>
+    </div>
+    <div class="footer-copy">© 2025 Revive Gym. Todos los derechos reservados.</div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-bar" id="sticky-bar">
+    <!-- ⬇️ REEMPLAZA el href con tu link de pago -->
+    <a href="TU_LINK_DE_PAGO_AQUI" class="btn" target="_blank" rel="noopener">
+        Obtener Pack Intro — $499 →
+    </a>
+</div>
+
+<script>
+/* === COUNTDOWN (persists in localStorage) === */
+(function() {
+    const KEY = 'revive_offer_end';
+    const now = Date.now();
+    let end = parseInt(localStorage.getItem(KEY) || '0');
+    if (!end || end < now) {
+        end = now + 24 * 60 * 60 * 1000;
+        localStorage.setItem(KEY, end);
+    }
+    function tick() {
+        const rem = Math.max(0, parseInt(localStorage.getItem(KEY)) - Date.now());
+        const h = Math.floor(rem / 3600000);
+        const m = Math.floor((rem % 3600000) / 60000);
+        const s = Math.floor((rem % 60000) / 1000);
+        document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+        document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+        document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+        if (rem === 0) {
+            localStorage.setItem(KEY, Date.now() + 24 * 60 * 60 * 1000);
+        }
+    }
+    tick();
+    setInterval(tick, 1000);
+})();
+
+/* === FAQ ACCORDION === */
+document.querySelectorAll('.faq-q').forEach(function(q) {
+    q.addEventListener('click', function() {
+        var item = q.parentElement;
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+        if (!isOpen) item.classList.add('open');
+    });
+});
+
+/* === SCROLL ANIMATIONS === */
+var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('in'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-up').forEach(function(el) { observer.observe(el); });
+
+/* === STICKY MOBILE CTA === */
+(function() {
+    if (window.innerWidth > 768) return;
+    var bar   = document.getElementById('sticky-bar');
+    var cta   = document.getElementById('hero-cta');
+    var io = new IntersectionObserver(function(entries) {
+        bar.style.display = entries[0].isIntersecting ? 'none' : 'block';
+    }, { threshold: 0 });
+    io.observe(cta);
+})();
+</script>
+
+</body>
+</html>
